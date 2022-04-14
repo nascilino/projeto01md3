@@ -1,3 +1,4 @@
 /.vscode
 /aula01
-nodemodules/
+node_modules/
+

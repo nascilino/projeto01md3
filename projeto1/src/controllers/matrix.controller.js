@@ -7,7 +7,13 @@ const findMatrixController = (req, res) => {
 
 const findPersonByIdController = (req, res) => {
   const idParam = req.params.id;
+
+  // if(!idParam){
+  //   return res.status(400).send({message: 'Id invalido!'})}
   const chosenPerson = matrixService.findPersonByIdService(idParam);
+  if(!chosenPerson){
+    return res.status(404).send({message: 'personagem nao encontrado'})
+  }
   res.send(chosenPerson);
 };
 const createPersonController = (req, res) => {
@@ -22,7 +28,7 @@ const createPersonController = (req, res) => {
   return res.status(400).send({message:'preencha todos os campos!'})
   }
   const newPerson = matrixService.createPersonService(person);
-  res.send(newPerson);
+  res.status(201).send(newPerson);
 };
 
 const updatePersonController = (req, res) => {

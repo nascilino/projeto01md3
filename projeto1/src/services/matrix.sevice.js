@@ -1,7 +1,7 @@
 const matrix = [
   {
     id: 1,
-    Nome: 'Neo',
+    nome: 'Neo',
     descricao:
       'O personagem Neo vive no mundo da Matrix, um ambiente ilusório em que os seres humanos são neuralmente ligados a um gigantesco sistema computacional que simula o mundo no período do século XX. Este sistema foi desenvolvido por uma inteligência artificial para manter a população humana como meio de subsistência para as máquinas - as máquinas usam a energia bioelétrica do ser humano como principal fonte de energia. Anteriormente, as máquinas usavam a energia solar, mas essa fonte de energia foi cortada durante a guerra, quando o homem utilizou armas nucleares para iniciar um inverno nuclear.',
     forca: 10.0,

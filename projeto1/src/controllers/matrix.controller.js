@@ -12,15 +12,15 @@ const findPersonByIdController = (req, res) => {
 };
 const createPersonController = (req, res) => {
   const person = req.body;
-  // if(
-  //   !person||
-  //   !person.nome||
-  //   !person.escricao||
-  //   !person.forca
+  if(
+    !person||
+    !person.nome||
+    !person.descricao||
+    !person.forca
 
-  // ){
-  // return res.status(400).send({message:'preencha todos os campos!'})
-  // }
+  ){
+  return res.status(400).send({message:'preencha todos os campos!'})
+  }
   const newPerson = matrixService.createPersonService(person);
   res.send(newPerson);
 };

@@ -6,10 +6,10 @@ const findMatrixController = (req, res) => {
 };
 
 const findPersonByIdController = (req, res) => {
-  const idParam = req.params.id;
+  const idParam = Number(req.params.id);
 
-  // if(!idParam){
-  //   return res.status(400).send({message: 'Id invalido!'})}
+  if(!idParam){ 
+    return res.status(400).send({message: 'Id invalido!'})}
   const chosenPerson = matrixService.findPersonByIdService(idParam);
   if(!chosenPerson){
     return res.status(404).send({message: 'personagem nao encontrado'})

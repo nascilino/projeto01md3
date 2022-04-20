@@ -1,48 +1,50 @@
-const matrixService = require("../services/matrix.sevice");
+const matrixService = require('../services/matrix.sevice');
 
-const findMatrixController = (req, res) => {
-  const allMatrix = matrixService.findMatrixService();
+const findAllMatrixController = async (req, res) => {
+  const allMatrix = await matrixService.findMatrixService();
+  if (allMatrix.length == 0) {
+    return res
+      .status(404)
+      .send({ message: 'Não existe nenhuma Person cadastrada!' });
+  }
   res.send(allMatrix);
 };
 
-const findPersonByIdController = (req, res) => {
-  const idParam = Number(req.params.id);
-
-  if (!idParam) {
-    return res.status(400).send({ message: "Id invalido!" });
-  }
-  const chosenPerson = matrixService.findPersonByIdService(idParam);
+const findByIdPersonController = async (req, res) => {
+  const idParam = req.params.id;
+  const chosenPerson = await matrixService.findByIdMatrixService(idParam);
   if (!chosenPerson) {
-    return res.status(404).send({ message: "personagem nao encontrado" });
+    return res.status(404).send({ message: 'Person não encontrada!' });
   }
   res.send(chosenPerson);
 };
-const createPersonController = (req, res) => {
-  const person = req.body;
-  if (!person || !person.nome || !person.descricao || !person.forca) {
-    return res.status(400).send({ message: "preencha todos os campos!" });
-  }
-  const newPerson = matrixService.createPersonService(person);
+
+const createPersonController = async (req, res) => {
+  const Person = req.body;
+  const newPerson = await matrixService.createMatrixService(Person);
   res.status(201).send(newPerson);
 };
 
-const updatePersonController = (req, res) => {
-  const idParam = +req.params.id;
-  const personEdit = req.body;
-  const updatedPerson = matrixService.updatePersonService(idParam, personEdit);
+const updatePersonController = async (req, res) => {
+  const idParam = req.params.id;
+  const editPerson = req.body;
+  const updatedPerson = await matrixService.updateMatrixService(
+    idParam,
+    editPerson,
+  );
   res.send(updatedPerson);
 };
 
-const deletePersonController = (req, res) => {
+const deletePersonController = async (req, res) => {
   const idParam = req.params.id;
-  matrixService.deletePersonService(idParam);
-  res.send({ message: "personagem deletado com sucesso!" });
+  await matrixService.deleteMatrixService(idParam);
+  res.send({ message: 'Person deletada com sucesso!' });
 };
 
 module.exports = {
-  findMatrixController,
-  findPersonByIdController,
-  deletePersonController,
-  updatePersonController,
+  findAllMatrixController,
+  findByIdPersonController,
   createPersonController,
+  updatePersonController,
+  deletePersonController,
 };

@@ -1,11 +1,11 @@
-const express = require("express");
-const router = express.Router();
+const route = require('express').Router();
+const controllerMatrix = require('../controllers/matrix.controller');
+const { validId, validObjectBody } = require('../middlewares/person.middleware');
 
-const matrixController = require("../controllers/matrix.controller");
+route.get('/todos', controllerMatrix.findAllMatrixController);
+route.get('/person/:id', validId, controllerMatrix.findByIdPersonController);
+route.post('/create', validObjectBody, controllerMatrix.createPersonController);
+route.put('/update-person/:id',validId, validObjectBody,  controllerMatrix.updatePersonController);
+route.delete('/delete-person/:id', validId, controllerMatrix.deletePersonController);
 
-router.get("/todos", matrixController.findMatrixController);
-router.get("/person/:id", matrixController.findPersonByIdController);
-router.post('/criar', matrixController.createPersonController);
-router.put('/update/:id', matrixController.updatePersonController);
-router.delete('/deletar/:id', matrixController.deletePersonController);
-module.exports = router;
+module.exports = route;

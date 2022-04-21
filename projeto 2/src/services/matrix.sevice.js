@@ -2,7 +2,6 @@ const Person = require('../models/Person');
 
 const findMatrixService = async () => {
   const matrix = await Person.find();
-  console.log(matrix)
   return matrix;
   
 };

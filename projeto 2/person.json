@@ -1,0 +1,30 @@
+[
+    {
+      "_id": "6260913bcb534356c89b7e52",
+      "nome": "Neo",
+      "descricao": "O personagem Neo vive no mundo da Matrix, um ambiente ilusório em que os seres humanos são neuralmente ligados a um gigantesco sistema computacional que simula o mundo no período do século XX. Este sistema foi desenvolvido por uma inteligência artificial para manter a população humana como meio de subsistência para as máquinas - as máquinas usam a energia bioelétrica do ser humano como principal fonte de energia. Anteriormente, as máquinas usavam a energia solar, mas essa fonte de energia foi cortada durante a guerra, quando o homem utilizou armas nucleares para iniciar um inverno nuclear.",
+      "forca": 10,
+      "__v": 0
+    },
+    {
+      "_id": "6260922e6aca58b4db72ae64",
+      "nome": "Trinity",
+      "descricao": "Trinity é um personagem fictício da franquia Matrix. Ela é retratada por Carrie-Anne Moss nos filmes. Nos segmentos de gameplay de Path of Neo, ela é dublada por Jennifer Hale. Trinity apareceu pela primeira vez no filme de 1999 The Matrix.",
+      "forca": 9,
+      "__v": 0
+    },
+    {
+      "_id": "626092516aca58b4db72ae66",
+      "nome": "Morpheus",
+      "descricao": "Morpheus é um personagem fictício da franquia Matrix. Ele é retratado por Laurence Fishburne nos três primeiros filmes e no videogame Matrix: Path of Neo, onde seu ator original foi o único a reprisar a voz de seu personagem.",
+      "forca": 9,
+      "__v": 0
+    },
+    {
+      "_id": "626095aaa34153a6650a82fd",
+      "nome": "Morpheus",
+      "descricao": "Morpheus é um personagem fictício da franquia Matrix. Ele é retratado por Laurence Fishburne nos três primeiros filmes e no videogame Matrix: Path of Neo, onde seu ator original foi o único a reprisar a voz de seu personagem.",
+      "forca": 9,
+      "__v": 0
+    }
+  ]

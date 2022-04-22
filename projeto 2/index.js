@@ -1,18 +1,18 @@
-const express = require("express");
-const connectToDatabase = require("./src/database/database");
-const cors = require("cors");
-const port = 3000;
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
+const routes = require('./src/routes/matrix.routes');
+const connectToDatabase = require('./src/database/database');
+
+const port = process.env.PORT || 3000;
 const app = express();
-const route = require("./src/routes/matrix.routes");
-
-app.use(cors());
-
-app.use(express.json());
 
 connectToDatabase();
 
-app.use("/matrix", route);
+app.use(express.json());
+app.use(cors());
+app.use('/matrix', routes);
 
 app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`);
+  console.log(`Servidor rodando na porta ${port}`);
 });
